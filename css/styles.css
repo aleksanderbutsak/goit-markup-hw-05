@@ -99,10 +99,22 @@ body {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
-.main-navigation {
-  display: flex;
-  text-align: center;
+.curent {
+  position: relative;
 }
+.curent::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: -28px;
+  display: block;
+  background-color: #404bbf;
+  border-radius: 2px;
+  margin-top: 24px;
+}
+
 .logo-link {
   font-family: "Raleway", sans-serif;
   font-style: normal;
@@ -172,7 +184,10 @@ body {
 }
 
 /**------------------------------------------Hero-------------------------------------------*/
-
+.main-navigation {
+  display: flex;
+  text-align: center;
+}
 .hero {
   text-align: center;
   padding-top: 188px;
@@ -188,6 +203,7 @@ body {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/people-office.jpg);
+
   background-color: #2e2f42;
   background-repeat: no-repeat;
   background-position: center;
@@ -217,7 +233,7 @@ body {
   border-radius: 4px;
   padding: 16px 32px;
   border: transparent;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -367,7 +383,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--primary-brand-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .person-social-link:hover,
 .person-social-link:focus {
@@ -406,7 +422,8 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--subtle-text-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-icon {
   fill: currentColor;
@@ -482,7 +499,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--primary-brand-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-icon {
   fill: var(--light-color);
@@ -493,7 +510,7 @@ body {
 
 .footer-social-link:hover,
 .footer-social-link:focus {
-  background: var(--success-color);
+  background-color: var(--success-color);
 }
 
 .backdrop {
@@ -590,7 +607,9 @@ body {
   cursor: pointer;
   background-color: var(--light-color);
   color: var(--primary-brand-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-button:hover,
@@ -620,6 +639,9 @@ body {
 }
 .category-link {
   display: block;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-cover-wrap {
