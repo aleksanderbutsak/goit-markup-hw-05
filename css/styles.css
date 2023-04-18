@@ -102,6 +102,7 @@ body {
 .curent {
   position: relative;
 }
+
 .curent::after {
   position: absolute;
   content: "";
@@ -136,6 +137,9 @@ body {
   letter-spacing: 0.02em;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.active-link {
+  color: var(--pressed-state-color);
+}
 .list {
 }
 .header-list {
@@ -169,10 +173,6 @@ body {
   letter-spacing: 0.02em;
   color: var(--text-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.header-link:hover,
-.header-link:focus {
-  color: var(--pressed-state-color);
 }
 
 .contact-link:hover,
@@ -431,11 +431,10 @@ body {
 .customers-item-link:hover,
 .customers-item-link:focus {
   border-color: var(--pressed-state-color);
+  color: var(--pressed-state-color);
 }
 .customers-item-link:hover .customers-icon,
 .customers-item-link:focus .customers-icon {
-  border-color: var(--pressed-state-color);
-  fill: var(--pressed-state-color);
 }
 .footer {
   padding-top: 100px;
@@ -552,15 +551,17 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
+  padding: 0;
 
   position: absolute;
   top: 24px;
   right: 24px;
 
+  fill: var(--dark-color);
   background-color: var(--accent-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0;
-  transition-property: background-color;
+
+  transition-property: background-color, fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -573,9 +574,6 @@ body {
 .modal-close-button:hover .close-modal-icon,
 .modal-close-button:focus .close-modal-icon {
   fill: var(--white-background-color);
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 **-------------------------------------------Portfolio-------------------------------------------*/
   .filter-title {
@@ -595,8 +593,6 @@ body {
 
 .filter-button {
   padding: 12px 24px;
-  justify-content: center;
-  align-items: center;
   border: 1px solid var(--accent-color);
   border-radius: 4px;
 
